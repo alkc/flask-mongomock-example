@@ -10,21 +10,13 @@ def create_app():
     app.config["DEBUG"] = True
     mongo.init_from_app(app)
 
-    @app.route("/foo1")
+    # Add example route:
+    @app.route("/foo")
     def view_db_item():
         """
-        Serve db item via getter function
+        Serve db item via a getter function
         """
         item = mongo.get_db_item()
-        return str(item)
-
-    @app.route("/foo2")
-    # ‘/’ URL is bound with hello_world() function.
-    def view_db_item2():
-        """
-        Serve db item directly from collection
-        """
-        item = mongo.bar_collection.find_one()
         return str(item)
 
     return app
