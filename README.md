@@ -15,3 +15,4 @@ pip install --requirement requirements.txt
 pytest .
 ```
 
+Feel free to add feedback if you think there is a smarter/better way of doing this.
