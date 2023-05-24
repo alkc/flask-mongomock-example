@@ -11,14 +11,19 @@ def create_app():
     mongo.init_from_app(app)
 
     @app.route("/foo1")
-    # ‘/’ URL is bound with hello_world() function.
     def view_db_item():
+        """
+        Serve db item via getter function
+        """
         item = mongo.get_db_item()
         return str(item)
 
     @app.route("/foo2")
     # ‘/’ URL is bound with hello_world() function.
     def view_db_item2():
+        """
+        Serve db item directly from collection
+        """
         item = mongo.bar_collection.find_one()
         return str(item)
 
@@ -26,7 +31,5 @@ def create_app():
 
 
 if __name__ == "__main__":
-
     app = create_app()
-
-    app.run(debug=True, port=8820)
+    app.run(debug=True)
