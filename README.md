@@ -1,6 +1,6 @@
 # Testing a pymongo/Flask app using pytest and mongomock
 
-This repo contains an example on how to use mongomock to replace a `pymongo.MongoClient` when testing a flask app
+This repo contains an example on how to use mongomock to replace a `pymongo.MongoClient` inside a Flask app.
 
 The dependencies, test cases, and structure of the app are based on a real project where I was scratching my head over this exact problem.
 
@@ -15,4 +15,4 @@ pip install --requirement requirements.txt
 pytest .
 ```
 
-Feel free to add feedback if you think there is a smarter/better way of doing this.
+I'm open for feedback if you think there is a smarter/better way of doing this.
