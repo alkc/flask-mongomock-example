@@ -13,13 +13,13 @@ def create_app():
     # ‘/’ URL is bound with hello_world() function.
     def view_db_item():
         item = mongo.get_db_item()
-        return item
+        return str(item)
 
     @app.route('/foo2')
     # ‘/’ URL is bound with hello_world() function.
     def view_db_item2():
         item = mongo.bar_collection.find_one()
-        return item
+        return str(item)
 
     return app
     
